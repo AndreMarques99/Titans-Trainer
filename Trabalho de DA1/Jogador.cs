@@ -10,9 +10,9 @@ namespace Trabalho_de_DA1
     {
         
         private int m_CombatPower;
-        private int m_GamePoints;
+        protected int m_GamePoints;
         private string m_NickName;
-        private int m_NumeroCombatesRealizados;
+        protected int m_NumeroCombatesRealizados;
         private string m_Powerups;
 
         Powerup[] PowerUP = new Powerup[5];
@@ -140,6 +140,7 @@ namespace Trabalho_de_DA1
 
             double resultado = Bonus1 + Bonus2;
             double resultadoFInal = CombatPower + (CombatPower * resultado);
+            m_CombatPower = CombatPower + (CombatPower * Convert.ToInt32(resultado));
             return resultadoFInal;
 
         }
@@ -162,11 +163,128 @@ namespace Trabalho_de_DA1
 
             return Apresentacao;
         }
-      /*  public virtual string Combater(int PosicaoPowerUP1, int PosicaoPowerUP2, int TitanCP)
+        public virtual int Combater(int PosicaoPowerUP1, int PosicaoPowerUP2, int TitanCP_adversario)
         {
+            double jogador = TitanCP(PosicaoPowerUP1, PosicaoPowerUP2);
+            double resultado;
 
+            if (jogador > TitanCP_adversario)
+            {
+                if (m_CombatPower > TitanCP_adversario)
+                {
+                    resultado = (jogador - TitanCP_adversario) * 0.1;
+                    m_GamePoints = Convert.ToInt32(resultado * 2);
+                }
+                else
+                {
+                    resultado = (jogador - TitanCP_adversario) * 0.1;
+                    m_GamePoints = Convert.ToInt32(resultado);
+                }
+                return 1;
+            }
+            else if (jogador == TitanCP_adversario)
+            {
+                return 0;
+            }
+            else if (jogador > TitanCP_adversario)
+            {
+                resultado = (TitanCP_adversario - jogador) * 0.1;
+                m_GamePoints = Convert.ToInt32(resultado);
+                return -1;
+            }
+            else
+                return Convert.ToInt32("Impossivel");
         } 
-      */
+        public string Combater500Vezes()
+        {
+            
+            
+            int titanCPOponente = 1500;
+            int Valor = 100;
+            int resultado  = Combater(0, 1, titanCPOponente);
+            int vitoria = 0;
+            int empate = 0;
+            int derrota = 0;
+            int pontos = m_GamePoints;
+            string enunciado;
+
+            for (int i =0; i < 500; i++)
+            {   
+               
+
+                if (titanCPOponente <= 4000)
+                {
+                    titanCPOponente = titanCPOponente + Valor;
+                    Valor = Valor + 100;
+
+                    if (resultado == 1)
+                    {
+                        vitoria++;
+                    }
+                    else if (resultado == 0)
+                    {
+                        empate++;
+                    }
+                    else if (resultado == -1)
+                    {
+                        derrota++;
+                    }
+
+
+                }
+                else
+                {
+                    titanCPOponente = 1500;
+                }
+            }
+                enunciado = "Vitorias:" + vitoria + " ,Derrotas:" + derrota + " ,Empates:" + empate + " ,Pontos:" + pontos;
+                return enunciado;
+        }
+        public string CombaterAte1000Pontos()
+        {
+            int titanCPOponente = 1500;
+            int Valor = 100;
+            int resultado = Combater(0, 1, titanCPOponente);
+            int vitoria = 0;
+            int empate = 0;
+            int derrota = 0;
+            int pontos = m_GamePoints;
+            string enunciado;
+            
+            for (int i = 0; i < 1000; i++)
+            {
+               
+                if (titanCPOponente <= 4000)
+                {
+                    titanCPOponente = titanCPOponente + Valor;
+                    Valor = Valor + 100;
+
+                    if (resultado == 1)
+                    {
+                        vitoria++;
+                    }
+                    else if (resultado == 0)
+                    {
+                        empate++;
+                    }
+                    else if (resultado == -1)
+                    {
+                        derrota++;
+                    }
+                    if (m_GamePoints == 1000)
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    titanCPOponente = 1500;
+                }
+            }
+            enunciado = "Vitorias:" + vitoria + " ,Derrotas:" + derrota + " ,Empates:" + empate + " ,Pontos:" + pontos;
+            return enunciado;
+        }
+      
         public Jogador (string nickname, int CPInicial)
         {
             
@@ -184,7 +302,7 @@ namespace Trabalho_de_DA1
         }
         
         
-        // comentario
+
 
     }
 }
