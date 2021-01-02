@@ -9,7 +9,7 @@ namespace Trabalho_de_DA1
     public class Jogador
     {
         //Campos
-        private int m_CombatPower;
+        protected int m_CombatPower;
         protected int m_GamePoints;
         private string m_NickName;
         protected int m_NumeroCombatesRealizados;
