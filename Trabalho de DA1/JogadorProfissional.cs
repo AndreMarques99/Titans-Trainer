@@ -71,9 +71,9 @@ namespace Trabalho_de_DA1
         }
         public override int CustoCP(int Unidade)
         {
-            int Resultado = Unidade * 15;
-            int ResultadoFinal = GamePoints - Resultado;
-            return ResultadoFinal;
+            int Resultado = Unidade * 5;
+            m_GamePoints = m_GamePoints - Resultado;
+            return m_GamePoints;
         }
         //Construtor
         public JogadorProfissional(string nickname, int CPInicial, string tiposubscricao, int apostaInicial) : base (nickname, CPInicial,  tiposubscricao)

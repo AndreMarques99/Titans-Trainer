@@ -15,6 +15,7 @@ namespace Trabalho_de_DA1
         protected int m_NumeroCombatesRealizados;
         private string m_Powerups;
 
+        //Array
         Powerup[] PowerUP = new Powerup[5];
 
 
@@ -47,8 +48,7 @@ namespace Trabalho_de_DA1
             get
             {
                 return m_GamePoints;
-            }
-           
+            }        
         }
         
         public string NickName
@@ -67,8 +67,7 @@ namespace Trabalho_de_DA1
             get
             {
                 return m_NumeroCombatesRealizados;
-            }
-           
+            }       
         }
         public string Powerups
         {
@@ -130,8 +129,8 @@ namespace Trabalho_de_DA1
        public virtual int CustoCP(int unidade)
         {
             int Resultado = unidade * 5;
-            int ResultadoFinal = m_GamePoints - Resultado;
-            return ResultadoFinal;
+            m_GamePoints = m_GamePoints - Resultado;
+            return m_GamePoints;
         }
 
         public virtual double ApplyPower(int bonusPowerUp1, int bonusPowerUp2)
