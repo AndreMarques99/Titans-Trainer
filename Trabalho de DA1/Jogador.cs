@@ -8,7 +8,7 @@ namespace Trabalho_de_DA1
 {
     public class Jogador
     {
-        
+        //Campos
         private int m_CombatPower;
         protected int m_GamePoints;
         private string m_NickName;
@@ -16,8 +16,9 @@ namespace Trabalho_de_DA1
         private string m_Powerups;
 
         Powerup[] PowerUP = new Powerup[5];
-        
-       
+
+
+        //Propriedades
         public int CombatPower
         {
             get
@@ -80,6 +81,7 @@ namespace Trabalho_de_DA1
                 m_Powerups = value;
             }
         }
+        //Métodos
         public int Praticar(int tempo)          //Falta indicar ao cliente se o treino foi realizado ou nao!
         {
             int Unidades = 0;  
@@ -284,7 +286,7 @@ namespace Trabalho_de_DA1
             enunciado = "Vitorias:" + vitoria + " ,Derrotas:" + derrota + " ,Empates:" + empate + " ,Pontos:" + pontos;
             return enunciado;
         }
-      
+        //Construtor
         public Jogador (string nickname, int CPInicial)
         {
             

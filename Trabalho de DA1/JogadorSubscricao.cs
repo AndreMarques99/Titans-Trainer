@@ -8,10 +8,11 @@ namespace Trabalho_de_DA1
 {
     public class JogadorSubscricao : Jogador
     {
-
+        //Campos
         private bool m_TemHabilidadeSecreta;
         private string m_TipoSubscricao;
 
+        //Propriedades
         public int MyProperty { get; set; }
         public virtual bool TemHabilidadeSecreta
         {
@@ -35,6 +36,7 @@ namespace Trabalho_de_DA1
                 m_TipoSubscricao = value;
             }
         }
+        //Métodos
         public override double TitanCP(double Valor1, double Valor2)
         {
             if (m_TemHabilidadeSecreta == false)
@@ -74,7 +76,7 @@ namespace Trabalho_de_DA1
 
         }
       
-        //Metodo Auxiliar
+        //(Metodo Auxiliar)
         public int CombatesRestantes()
         {
             if (TipoSubscricao == "Bronze")
@@ -101,7 +103,7 @@ namespace Trabalho_de_DA1
         
         public override int CustoCP(int Unidade)
         {
-            int Resultado = Unidade * 5;
+            int Resultado = Unidade * 7;
             int ResultadoFinal = GamePoints - Resultado;
             return ResultadoFinal;
         }
@@ -116,7 +118,7 @@ namespace Trabalho_de_DA1
 
             return Apresentacao;
         }
-
+        //Construtor
         public JogadorSubscricao(string nickname, int CPInicial, string tiposubscricao) : base(nickname, CPInicial)
         {
             m_TemHabilidadeSecreta = false;

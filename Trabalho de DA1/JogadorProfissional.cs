@@ -8,10 +8,12 @@ namespace Trabalho_de_DA1
 {     
     public class JogadorProfissional : JogadorSubscricao
     {
+        //Campos
         private bool m_TemHabilidadeSecreta;
         private int m_ApostaAtual;
         private int m_Moedas;
 
+        //Propriedades
         public override bool TemHabilidadeSecreta
         {
             get
@@ -55,6 +57,7 @@ namespace Trabalho_de_DA1
                 m_Moedas = value;
             }
         }
+        //Métodos
         public override string Apresentar()
         {
             string Apresentacao;
@@ -72,10 +75,10 @@ namespace Trabalho_de_DA1
             int ResultadoFinal = GamePoints - Resultado;
             return ResultadoFinal;
         }
-
+        //Construtor
         public JogadorProfissional(string nickname, int CPInicial, string tiposubscricao, int apostaInicial) : base (nickname, CPInicial,  tiposubscricao)
         {
-            m_TemHabilidadeSecreta = true;               //Supondo que os jogadoresProfissionais começam com habilidade Secreta
+            m_TemHabilidadeSecreta = true;     //Supondo que os jogadoresProfissionais começam com habilidade Secreta
             m_ApostaAtual = apostaInicial;
             m_Moedas = 10;
         }

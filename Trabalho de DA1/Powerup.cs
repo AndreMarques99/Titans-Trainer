@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 namespace Trabalho_de_DA1
 {
     public class Powerup
-    {
+    {   
+        //Campos
         private string m_Nome;
         private double m_Bonus;
 
-        public string Nome
+        //Propriedades
+       public string Nome
         {
             get
             {
@@ -37,7 +39,7 @@ namespace Trabalho_de_DA1
             }
         }
        
-        
+        //Construtor
         public Powerup(string nome, double bonus)
         {
             m_Nome = nome;
