@@ -69,6 +69,43 @@ namespace Trabalho_de_DA1
 
             return Apresentacao;
         }
+        public override int Combater(int PosicaoPowerUP1, int PosicaoPowerUP2, int TitanCP_adversario)
+        {
+            double jogador = TitanCP(PosicaoPowerUP1, PosicaoPowerUP2);
+            double resultado;
+
+            if (m_ApostaAtual <= m_Moedas)
+            {
+                if (jogador > TitanCP_adversario)
+                {
+                    if (m_CombatPower > TitanCP_adversario)
+                    {
+                        resultado = (jogador - TitanCP_adversario) * 0.1;
+                        m_GamePoints = Convert.ToInt32(resultado * 2);
+                    }
+                    else
+                    {
+                        resultado = (jogador - TitanCP_adversario) * 0.1;
+                        m_GamePoints = Convert.ToInt32(resultado);
+                    }
+                    return 1;
+                }
+                else if (jogador == TitanCP_adversario)
+                {
+                    return 0;
+                }
+                else if (jogador > TitanCP_adversario)
+                {
+                    resultado = (TitanCP_adversario - jogador) * 0.1;
+                    m_GamePoints = Convert.ToInt32(resultado);
+                    return -1;
+                }
+                else
+                    return Convert.ToInt32("Impossivel");
+            }
+            else
+                return Convert.ToInt32("Impossivel");
+        }
         public override int CustoCP(int Unidade)
         {
             int Resultado = Unidade * 5;
