@@ -131,6 +131,10 @@ namespace Trabalho_de_DA1
             if ((PosicaoNovoPowerUP >= 0 && PosicaoNovoPowerUP < 5) && m_Moedas >= 100)
             {
                 m_CombatPower = m_CombatPower - (200 * (Convert.ToInt32(PowerUP[novoPowerUP].Bonus)));
+                if (m_CombatPower < 0)
+                {
+                    m_CombatPower = 0;
+                }
                 m_Moedas = m_Moedas - 100;
                 return m_CombatPower;
             }
