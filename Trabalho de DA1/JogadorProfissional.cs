@@ -73,6 +73,7 @@ namespace Trabalho_de_DA1
         {
             double jogador = TitanCP(PosicaoPowerUP1, PosicaoPowerUP2);
             double resultado;
+            int Aposta = m_Moedas - m_ApostaAtual;
 
             if (m_ApostaAtual <= m_Moedas)
             {
@@ -82,22 +83,35 @@ namespace Trabalho_de_DA1
                     {
                         resultado = (jogador - TitanCP_adversario) * 0.1;
                         m_GamePoints = Convert.ToInt32(resultado * 2);
+                       
                     }
                     else
                     {
                         resultado = (jogador - TitanCP_adversario) * 0.1;
                         m_GamePoints = Convert.ToInt32(resultado);
                     }
+                    m_Moedas = Aposta + (ApostaAtual * 2);
+                    m_ApostaAtual++;
                     return 1;
                 }
                 else if (jogador == TitanCP_adversario)
                 {
-                    return 0;
+                    if (m_ApostaAtual > 1)
+                    {
+                        m_ApostaAtual--;
+                    }
+                    return 0;                
                 }
-                else if (jogador > TitanCP_adversario)
+                else if (jogador < TitanCP_adversario)
                 {
-                    resultado = (TitanCP_adversario - jogador) * 0.1;
-                    m_GamePoints = Convert.ToInt32(resultado);
+                   
+                        resultado = (TitanCP_adversario - jogador) * 0.1;
+                        m_GamePoints = Convert.ToInt32(resultado);
+                        m_Moedas = Aposta;
+                    if (m_ApostaAtual > 1)
+                    {
+                        m_ApostaAtual--;
+                    }                                       
                     return -1;
                 }
                 else

@@ -285,6 +285,19 @@ namespace Trabalho_de_DA1
             enunciado = "Vitorias:" + vitoria + " ,Derrotas:" + derrota + " ,Empates:" + empate + " ,Pontos:" + pontos;
             return enunciado;
         }
+        public int TrocarPowerup(int novoPowerUP, int PosicaoNovoPowerUP)
+        {
+            if (PosicaoNovoPowerUP >= 0 && PosicaoNovoPowerUP < 5)
+            {
+                m_CombatPower = m_CombatPower - (200 * (Convert.ToInt32(PowerUP[novoPowerUP].Bonus)));
+                return m_CombatPower;
+            }
+            else
+            { 
+                return Convert.ToInt32("Impossivel"); 
+            }
+        }
+
         //Construtor
         public Jogador (string nickname, int CPInicial)
         {
