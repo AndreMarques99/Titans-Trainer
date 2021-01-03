@@ -16,7 +16,7 @@ namespace Trabalho_de_DA1
         private string m_Powerups;
 
         //Array
-        Powerup[] PowerUP = new Powerup[5];
+       protected Powerup[] PowerUP = new Powerup[5];
 
 
         //Propriedades

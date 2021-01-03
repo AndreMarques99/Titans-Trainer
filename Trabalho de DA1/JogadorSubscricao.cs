@@ -39,9 +39,12 @@ namespace Trabalho_de_DA1
         //Métodos
         public override double TitanCP(int bonusPowerUp1, int bonusPowerUp2)
         {
+            double Bonus1 = PowerUP[bonusPowerUp1].Bonus;
+            double Bonus2 = PowerUP[bonusPowerUp2].Bonus;
+            
             if (m_TemHabilidadeSecreta == false)
             {
-                double Valor = bonusPowerUp1 + bonusPowerUp2;
+                double Valor = Bonus1 + Bonus2;
                 double Resultado;
                 Resultado = CombatPower * (Valor + 0.1);
 
@@ -49,7 +52,7 @@ namespace Trabalho_de_DA1
             }
             else
             {
-                double Valor = bonusPowerUp1 + bonusPowerUp2 + 1;
+                double Valor = Bonus1 + Bonus2;
                 double Resultado;
                 Resultado = CombatPower * (Valor + 0.2);
 
