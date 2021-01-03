@@ -126,6 +126,19 @@ namespace Trabalho_de_DA1
             m_GamePoints = m_GamePoints - Resultado;
             return m_GamePoints;
         }
+        public override int TrocarPowerup(int novoPowerUP, int PosicaoNovoPowerUP)
+        {
+            if ((PosicaoNovoPowerUP >= 0 && PosicaoNovoPowerUP < 5) && m_Moedas >= 100)
+            {
+                m_CombatPower = m_CombatPower - (200 * (Convert.ToInt32(PowerUP[novoPowerUP].Bonus)));
+                m_Moedas = m_Moedas - 100;
+                return m_CombatPower;
+            }
+            else
+            {
+                return Convert.ToInt32("Impossivel");
+            }
+        }
         //Construtor
         public JogadorProfissional(string nickname, int CPInicial, string tiposubscricao, int apostaInicial) : base (nickname, CPInicial,  tiposubscricao)
         {

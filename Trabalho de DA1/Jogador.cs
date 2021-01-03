@@ -275,7 +275,7 @@ namespace Trabalho_de_DA1
             enunciado = "Vitorias:" + vitoria + " ,Derrotas:" + derrota + " ,Empates:" + empate + " ,Pontos:" + pontos;
             return enunciado;
         }
-        public int TrocarPowerup(int novoPowerUP, int PosicaoNovoPowerUP)
+        public virtual int TrocarPowerup(int novoPowerUP, int PosicaoNovoPowerUP)
         {
             if (PosicaoNovoPowerUP >= 0 && PosicaoNovoPowerUP < 5)
             {
