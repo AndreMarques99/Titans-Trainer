@@ -133,9 +133,9 @@ namespace Trabalho_de_DA1
             return m_GamePoints;
         }
 
-        public virtual double ApplyPower(int bonusPowerUp1, int bonusPowerUp2)
+
+          public virtual double TitanCP(int bonusPowerUp1, int bonusPowerUp2)             
         {
-           
             double Bonus1 = PowerUP[bonusPowerUp1].Bonus;
             double Bonus2 = PowerUP[bonusPowerUp2].Bonus;
 
@@ -143,16 +143,6 @@ namespace Trabalho_de_DA1
             double resultadoFInal = CombatPower + (CombatPower * resultado);
             m_CombatPower = CombatPower + (CombatPower * Convert.ToInt32(resultado));
             return resultadoFInal;
-
-        }
-
-          public virtual double TitanCP(double powerUp1, double powerUp2)             
-        {
-            double Valor = powerUp1 + powerUp2 + 1;
-            double Resultado;
-            Resultado = CombatPower * Valor;
-
-            return Resultado;
         }
         public virtual string Apresentar()
         {

@@ -37,11 +37,11 @@ namespace Trabalho_de_DA1
             }
         }
         //Métodos
-        public override double TitanCP(double Valor1, double Valor2)
+        public override double TitanCP(int bonusPowerUp1, int bonusPowerUp2)
         {
             if (m_TemHabilidadeSecreta == false)
             {
-                double Valor = Valor1 + Valor2 + 1;
+                double Valor = bonusPowerUp1 + bonusPowerUp2;
                 double Resultado;
                 Resultado = CombatPower * (Valor + 0.1);
 
@@ -49,7 +49,7 @@ namespace Trabalho_de_DA1
             }
             else
             {
-                double Valor = Valor1 + Valor2 + 1;
+                double Valor = bonusPowerUp1 + bonusPowerUp2 + 1;
                 double Resultado;
                 Resultado = CombatPower * (Valor + 0.2);
 
