@@ -69,6 +69,44 @@ namespace Trabalho_de_DA1
 
             return Apresentacao;
         }
+        public override double TitanCP(int bonusPowerUp1, int bonusPowerUp2)
+        {
+            double Bonus1 = PowerUP[bonusPowerUp1].Bonus;
+            double Bonus2 = PowerUP[bonusPowerUp2].Bonus;
+
+            
+                if (m_TemHabilidadeSecreta == false)
+                {
+                    double Valor = Bonus1 + Bonus2;
+                    double Resultado;
+                    Resultado = m_CombatPower * (Valor + 0.1);
+                    if (m_ApostaAtual == 0)
+                    {
+                    m_CombatPower = Convert.ToInt32(Resultado + 100);
+                    }
+                    else
+                    {
+                    m_CombatPower = Convert.ToInt32(Resultado);                   
+                    }               
+                }  
+                else
+                {
+                    double Valor = Bonus1 + Bonus2;
+                    double Resultado;
+                    Resultado = CombatPower * (Valor + 0.2);
+                    if (m_ApostaAtual == 0)
+                    {
+                    m_CombatPower = Convert.ToInt32(Resultado + 100);
+                    }
+                    else
+                    {
+                    m_CombatPower = Convert.ToInt32(Resultado);                 
+                    }             
+                }
+            return m_CombatPower;
+            
+
+        }
         public override int Combater(int PosicaoPowerUP1, int PosicaoPowerUP2, int TitanCP_adversario)
         {
             double jogador = TitanCP(PosicaoPowerUP1, PosicaoPowerUP2);
