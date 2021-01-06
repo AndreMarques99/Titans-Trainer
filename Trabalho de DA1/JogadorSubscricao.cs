@@ -144,8 +144,16 @@ namespace Trabalho_de_DA1
         public override int CustoCP(int Unidade)
         {
             int Resultado = Unidade * 7;
-            m_GamePoints = m_GamePoints - Resultado;
-            return m_GamePoints;
+
+            if (m_GamePoints > Resultado)
+            {
+                m_GamePoints = m_GamePoints - Resultado;
+                return m_GamePoints;
+            }
+            else
+            {
+                return Convert.ToInt32("GamePoints Insuficientes!");
+            }
         }
         public override string Apresentar()
         {

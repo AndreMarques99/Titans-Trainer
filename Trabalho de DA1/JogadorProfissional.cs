@@ -160,9 +160,17 @@ namespace Trabalho_de_DA1
         }
         public override int CustoCP(int Unidade)
         {
-            int Resultado = Unidade * 5;
-            m_GamePoints = m_GamePoints - Resultado;
-            return m_GamePoints;
+            int Resultado = Unidade * 7;
+
+            if (m_GamePoints > Resultado)
+            {
+                m_GamePoints = m_GamePoints - Resultado;
+                return m_GamePoints;
+            }
+            else
+            {
+                return Convert.ToInt32("GamePoints Insuficientes!");
+            }
         }
         public override int TrocarPowerup(int novoPowerUP, int PosicaoNovoPowerUP)
         {
