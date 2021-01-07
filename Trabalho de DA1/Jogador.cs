@@ -81,56 +81,106 @@ namespace Trabalho_de_DA1
             }
         }
         //Métodos
-        public int Praticar(int tempo)          //Falta indicar ao cliente se o treino foi realizado ou nao!
+        public int Praticar(int tempo)      
         {
-            int Unidades = 0;  
+            int Unidades = 0;
 
-        if (tempo == 5)
+            if (tempo >= 5)    //Tempo máximo de treino será de 45 minutos!!
             {
-                Unidades = tempo * 2;
-                return Unidades;
+                if (tempo >= 5 && tempo < 10)
+                {
+                    tempo = 5;
+                    Unidades = tempo * 2;
+                    return Unidades;
+                }
+                else if (tempo >= 10 && tempo < 15)
+                {
+                    tempo = 10;
+                    Unidades = tempo * 2;
+                    return Unidades;
+                }
+                else if (tempo >= 15 && tempo < 20)
+                {
+                    tempo = 15;
+                    Unidades = tempo * 2;
+                    return Unidades;
+                }
+                else if (tempo >= 20 && tempo < 25)
+                {
+                    tempo = 20;
+                    Unidades = tempo * 2;
+                    return Unidades;
+                }
+                else if (tempo >= 25 && tempo < 30)
+                {
+                    tempo = 25;
+                    Unidades = tempo * 2;
+                    return Unidades;
+                }
+                else if (tempo >= 30 && tempo < 35)
+                {
+                    tempo = 30;
+                    Unidades = tempo * 2;
+                    return Unidades;
+                }
+                else if (tempo >= 35 && tempo < 40)
+                {
+                    tempo = 35;
+                    Unidades = tempo * 2;
+                    return Unidades;
+                }
+                else if (tempo >= 40 && tempo < 45)
+                {
+                    tempo = 40;
+                    Unidades = tempo * 2;
+                    return Unidades;
+                }
+                else if (tempo >= 45)
+                {
+                    tempo = 45;
+                    Unidades = tempo * 2;
+                    return Unidades;
+                }
+
+                m_GamePoints = CustoCP(Unidades);
+                m_CombatPower = m_CombatPower + Unidades;
+                return Convert.ToInt32("O treino foi realizado com Sucesso!");
             }
-        else if (tempo == 10)
+            else
             {
-                Unidades = tempo * 2;
-                return Unidades;
+                return Convert.ToInt32("O treino não foi realizado!");
             }
-        else if (tempo == 15)
-            {
-                Unidades = tempo * 2;
-                return Unidades;
-            }
-        else if (tempo == 20)
-            {
-                Unidades = tempo * 2;
-                return Unidades;
-            }
-        else if (tempo == 25)
-            {
-                Unidades = tempo * 2;
-                return Unidades;
-            }
-        else if (tempo == 30)
-            {
-                Unidades = tempo * 2;
-                return Unidades;
-            }
-            m_CombatPower = m_CombatPower + Unidades;
-            return m_CombatPower;
-            
         } 
 
         public int Praticar()
         {
-            m_CombatPower = m_CombatPower + 60;
-            return m_CombatPower;
+            int unidades = 60;
+
+            if (m_GamePoints >= 300)
+            {
+                m_GamePoints = CustoCP(unidades);
+                m_CombatPower = m_CombatPower + 60;
+                return m_CombatPower;
+            }
+        else
+            {
+                return Convert.ToInt32("GamePoints Insuficientes!");
+            }
         }
 
-       public virtual int CustoCP(int unidade)
+        public virtual int CustoCP(int unidade)
         {
             int Resultado = unidade * 5;
-            m_GamePoints = m_GamePoints - Resultado;
-            return m_GamePoints;
+
+            if (m_GamePoints > Resultado)
+            { 
+                m_GamePoints = m_GamePoints - Resultado;
+                return m_GamePoints;
+            }
+            else
+            {
+                return Convert.ToInt32("GamePoints Insuficientes!");
+            }
         }
 
 
@@ -275,7 +325,7 @@ namespace Trabalho_de_DA1
             enunciado = "Vitorias:" + vitoria + " ,Derrotas:" + derrota + " ,Empates:" + empate + " ,Pontos:" + pontos;
             return enunciado;
         }
-        public int TrocarPowerup(int novoPowerUP, int PosicaoNovoPowerUP)
+        public virtual int TrocarPowerup(int novoPowerUP, int PosicaoNovoPowerUP)
         {
             if (PosicaoNovoPowerUP >= 0 && PosicaoNovoPowerUP < 5)
             {

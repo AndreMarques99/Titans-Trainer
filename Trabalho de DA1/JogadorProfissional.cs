@@ -69,6 +69,44 @@ namespace Trabalho_de_DA1
 
             return Apresentacao;
         }
+        public override double TitanCP(int bonusPowerUp1, int bonusPowerUp2)
+        {
+            double Bonus1 = PowerUP[bonusPowerUp1].Bonus;
+            double Bonus2 = PowerUP[bonusPowerUp2].Bonus;
+
+            
+                if (m_TemHabilidadeSecreta == false)
+                {
+                    double Valor = Bonus1 + Bonus2;
+                    double Resultado;
+                    Resultado = m_CombatPower * (Valor + 0.1);
+                    if (m_ApostaAtual == 0)
+                    {
+                    m_CombatPower = Convert.ToInt32(Resultado + 100);
+                    }
+                    else
+                    {
+                    m_CombatPower = Convert.ToInt32(Resultado);                   
+                    }               
+                }  
+                else
+                {
+                    double Valor = Bonus1 + Bonus2;
+                    double Resultado;
+                    Resultado = CombatPower * (Valor + 0.2);
+                    if (m_ApostaAtual == 0)
+                    {
+                    m_CombatPower = Convert.ToInt32(Resultado + 100);
+                    }
+                    else
+                    {
+                    m_CombatPower = Convert.ToInt32(Resultado);                 
+                    }             
+                }
+            return m_CombatPower;
+            
+
+        }
         public override int Combater(int PosicaoPowerUP1, int PosicaoPowerUP2, int TitanCP_adversario)
         {
             double jogador = TitanCP(PosicaoPowerUP1, PosicaoPowerUP2);
@@ -122,9 +160,34 @@ namespace Trabalho_de_DA1
         }
         public override int CustoCP(int Unidade)
         {
-            int Resultado = Unidade * 5;
-            m_GamePoints = m_GamePoints - Resultado;
-            return m_GamePoints;
+            int Resultado = Unidade * 7;
+
+            if (m_GamePoints > Resultado)
+            {
+                m_GamePoints = m_GamePoints - Resultado;
+                return m_GamePoints;
+            }
+            else
+            {
+                return Convert.ToInt32("GamePoints Insuficientes!");
+            }
+        }
+        public override int TrocarPowerup(int novoPowerUP, int PosicaoNovoPowerUP)
+        {
+            if ((PosicaoNovoPowerUP >= 0 && PosicaoNovoPowerUP < 5) && m_Moedas >= 100)
+            {
+                m_CombatPower = m_CombatPower - (200 * (Convert.ToInt32(PowerUP[novoPowerUP].Bonus)));
+                if (m_CombatPower < 0)
+                {
+                    m_CombatPower = 0;
+                }
+                m_Moedas = m_Moedas - 100;
+                return m_CombatPower;
+            }
+            else
+            {
+                return Convert.ToInt32("Impossivel");
+            }
         }
         //Construtor
         public JogadorProfissional(string nickname, int CPInicial, string tiposubscricao, int apostaInicial) : base (nickname, CPInicial,  tiposubscricao)
