@@ -160,7 +160,7 @@ namespace Trabalho_de_DA1
         }
         public override int CustoCP(int Unidade)
         {
-            int Resultado = Unidade * 7;
+            int Resultado = Unidade * 15;
 
             if (m_GamePoints > Resultado)
             {
