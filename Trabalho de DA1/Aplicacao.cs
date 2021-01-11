@@ -22,14 +22,26 @@ namespace Trabalho_de_DA1
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+       
+        private void btnCreditos_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnRegistarJogador_Click(object sender, EventArgs e)
+        {
+            tabAplicacao.SelectTab(1);
         }
     }
 }
