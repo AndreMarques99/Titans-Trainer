@@ -40,12 +40,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnAcederArena = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnAcederLoja = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnRegressarRegisto = new System.Windows.Forms.Button();
+            this.btnRegressarArena = new System.Windows.Forms.Button();
+            this.btnRegressarConsultar = new System.Windows.Forms.Button();
+            this.btnRegressarLoja = new System.Windows.Forms.Button();
             this.tabAplicacao.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabAplicacao
@@ -58,7 +68,7 @@
             this.tabAplicacao.Location = new System.Drawing.Point(-3, -1);
             this.tabAplicacao.Name = "tabAplicacao";
             this.tabAplicacao.SelectedIndex = 0;
-            this.tabAplicacao.Size = new System.Drawing.Size(1315, 586);
+            this.tabAplicacao.Size = new System.Drawing.Size(1131, 586);
             this.tabAplicacao.TabIndex = 0;
             // 
             // tabPage1
@@ -77,7 +87,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1307, 557);
+            this.tabPage1.Size = new System.Drawing.Size(1123, 557);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "PaginaInicial";
             // 
@@ -114,10 +124,11 @@
             this.btnConsultarJogador.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConsultarJogador.Location = new System.Drawing.Point(240, 295);
             this.btnConsultarJogador.Name = "btnConsultarJogador";
-            this.btnConsultarJogador.Size = new System.Drawing.Size(124, 76);
+            this.btnConsultarJogador.Size = new System.Drawing.Size(128, 76);
             this.btnConsultarJogador.TabIndex = 5;
             this.btnConsultarJogador.Text = "Consultar \r\nJogador";
             this.btnConsultarJogador.UseVisualStyleBackColor = false;
+            this.btnConsultarJogador.Click += new System.EventHandler(this.btnConsultarJogador_Click);
             // 
             // btnRegistarJogador
             // 
@@ -168,62 +179,129 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.No;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(657, 133);
+            this.pictureBox1.Location = new System.Drawing.Point(440, 178);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(509, 238);
+            this.pictureBox1.Size = new System.Drawing.Size(504, 197);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnRegressarRegisto);
+            this.tabPage2.Controls.Add(this.btnAcederArena);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1043, 556);
+            this.tabPage2.Size = new System.Drawing.Size(1123, 557);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "RegistarJogador";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnAcederArena
+            // 
+            this.btnAcederArena.Location = new System.Drawing.Point(343, 427);
+            this.btnAcederArena.Name = "btnAcederArena";
+            this.btnAcederArena.Size = new System.Drawing.Size(75, 33);
+            this.btnAcederArena.TabIndex = 0;
+            this.btnAcederArena.Text = "Arena!";
+            this.btnAcederArena.UseVisualStyleBackColor = true;
+            this.btnAcederArena.Click += new System.EventHandler(this.btnAcederArena_Click);
+            // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnRegressarArena);
+            this.tabPage3.Controls.Add(this.btnAcederLoja);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1043, 556);
+            this.tabPage3.Size = new System.Drawing.Size(1123, 557);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Arena";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btnAcederLoja
+            // 
+            this.btnAcederLoja.Location = new System.Drawing.Point(884, 73);
+            this.btnAcederLoja.Name = "btnAcederLoja";
+            this.btnAcederLoja.Size = new System.Drawing.Size(104, 40);
+            this.btnAcederLoja.TabIndex = 0;
+            this.btnAcederLoja.Text = "Aceder Loja";
+            this.btnAcederLoja.UseVisualStyleBackColor = true;
+            this.btnAcederLoja.Click += new System.EventHandler(this.btnAcederLoja_Click);
+            // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btnRegressarConsultar);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1043, 556);
+            this.tabPage4.Size = new System.Drawing.Size(1123, 557);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "ConsultarJogador";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.btnRegressarLoja);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1043, 556);
+            this.tabPage5.Size = new System.Drawing.Size(1123, 557);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Loja";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // btnRegressarRegisto
+            // 
+            this.btnRegressarRegisto.Location = new System.Drawing.Point(960, 443);
+            this.btnRegressarRegisto.Name = "btnRegressarRegisto";
+            this.btnRegressarRegisto.Size = new System.Drawing.Size(110, 89);
+            this.btnRegressarRegisto.TabIndex = 1;
+            this.btnRegressarRegisto.Text = "Regressar ao Inicío";
+            this.btnRegressarRegisto.UseVisualStyleBackColor = true;
+            this.btnRegressarRegisto.Click += new System.EventHandler(this.btnRegressarRegisto_Click);
+            // 
+            // btnRegressarArena
+            // 
+            this.btnRegressarArena.Location = new System.Drawing.Point(971, 415);
+            this.btnRegressarArena.Name = "btnRegressarArena";
+            this.btnRegressarArena.Size = new System.Drawing.Size(110, 89);
+            this.btnRegressarArena.TabIndex = 2;
+            this.btnRegressarArena.Text = "Regressar ao Inicío";
+            this.btnRegressarArena.UseVisualStyleBackColor = true;
+            this.btnRegressarArena.Click += new System.EventHandler(this.btnRegressarArena_Click);
+            // 
+            // btnRegressarConsultar
+            // 
+            this.btnRegressarConsultar.Location = new System.Drawing.Point(506, 234);
+            this.btnRegressarConsultar.Name = "btnRegressarConsultar";
+            this.btnRegressarConsultar.Size = new System.Drawing.Size(110, 89);
+            this.btnRegressarConsultar.TabIndex = 2;
+            this.btnRegressarConsultar.Text = "Regressar ao Inicío";
+            this.btnRegressarConsultar.UseVisualStyleBackColor = true;
+            this.btnRegressarConsultar.Click += new System.EventHandler(this.btnRegressarConsultar_Click);
+            // 
+            // btnRegressarLoja
+            // 
+            this.btnRegressarLoja.Location = new System.Drawing.Point(506, 234);
+            this.btnRegressarLoja.Name = "btnRegressarLoja";
+            this.btnRegressarLoja.Size = new System.Drawing.Size(110, 89);
+            this.btnRegressarLoja.TabIndex = 2;
+            this.btnRegressarLoja.Text = "Regressar ao Inicío";
+            this.btnRegressarLoja.UseVisualStyleBackColor = true;
+            this.btnRegressarLoja.Click += new System.EventHandler(this.btnRegressarLoja_Click);
             // 
             // frmAplicacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1307, 583);
+            this.ClientSize = new System.Drawing.Size(1127, 583);
             this.Controls.Add(this.tabAplicacao);
             this.Name = "frmAplicacao";
             this.Text = "TitansTrainer";
@@ -232,6 +310,10 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -252,6 +334,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnCreditos;
         private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button btnAcederArena;
+        private System.Windows.Forms.Button btnAcederLoja;
+        private System.Windows.Forms.Button btnRegressarRegisto;
+        private System.Windows.Forms.Button btnRegressarArena;
+        private System.Windows.Forms.Button btnRegressarConsultar;
+        private System.Windows.Forms.Button btnRegressarLoja;
     }
 }
 

@@ -31,7 +31,7 @@ namespace Trabalho_de_DA1
        
         private void btnCreditos_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Coiso & Tal!");
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -42,6 +42,41 @@ namespace Trabalho_de_DA1
         private void btnRegistarJogador_Click(object sender, EventArgs e)
         {
             tabAplicacao.SelectTab(1);
+        }
+
+        private void btnConsultarJogador_Click(object sender, EventArgs e)
+        {
+            tabAplicacao.SelectTab(3);
+        }
+
+        private void btnAcederArena_Click(object sender, EventArgs e)
+        {
+            tabAplicacao.SelectTab(2);
+        }
+
+        private void btnAcederLoja_Click(object sender, EventArgs e)
+        {
+            tabAplicacao.SelectTab(4);
+        }
+
+        private void btnRegressarRegisto_Click(object sender, EventArgs e)
+        {
+            tabAplicacao.SelectTab(0);
+        }
+
+        private void btnRegressarArena_Click(object sender, EventArgs e)
+        {
+            tabAplicacao.SelectTab(0);
+        }
+
+        private void btnRegressarConsultar_Click(object sender, EventArgs e)
+        {
+            tabAplicacao.SelectTab(0);
+        }
+
+        private void btnRegressarLoja_Click(object sender, EventArgs e)
+        {
+            tabAplicacao.SelectTab(0);
         }
     }
 }
