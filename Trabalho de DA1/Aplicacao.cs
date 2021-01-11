@@ -42,6 +42,7 @@ namespace Trabalho_de_DA1
         private void btnRegistarJogador_Click(object sender, EventArgs e)
         {
             tabAplicacao.SelectTab(1);
+            btnAcederArena.Enabled = false;
         }
 
         private void btnConsultarJogador_Click(object sender, EventArgs e)
@@ -52,6 +53,7 @@ namespace Trabalho_de_DA1
         private void btnAcederArena_Click(object sender, EventArgs e)
         {
             tabAplicacao.SelectTab(2);
+            
         }
 
         private void btnAcederLoja_Click(object sender, EventArgs e)
@@ -77,6 +79,11 @@ namespace Trabalho_de_DA1
         private void btnRegressarLoja_Click(object sender, EventArgs e)
         {
             tabAplicacao.SelectTab(0);
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            btnAcederArena.Enabled = true;
         }
     }
 }

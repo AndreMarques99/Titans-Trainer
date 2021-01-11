@@ -76,6 +76,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.tabAplicacao.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -245,9 +246,9 @@
             // 
             // btnAcederArena
             // 
-            this.btnAcederArena.Location = new System.Drawing.Point(94, 237);
+            this.btnAcederArena.Location = new System.Drawing.Point(94, 286);
             this.btnAcederArena.Name = "btnAcederArena";
-            this.btnAcederArena.Size = new System.Drawing.Size(75, 51);
+            this.btnAcederArena.Size = new System.Drawing.Size(85, 51);
             this.btnAcederArena.TabIndex = 0;
             this.btnAcederArena.Text = "Ir para a Arena!";
             this.btnAcederArena.UseVisualStyleBackColor = true;
@@ -513,6 +514,7 @@
             // 
             // gbFazerLogin
             // 
+            this.gbFazerLogin.Controls.Add(this.btnConfirmar);
             this.gbFazerLogin.Controls.Add(this.ibPasswordLogin);
             this.gbFazerLogin.Controls.Add(this.textBox7);
             this.gbFazerLogin.Controls.Add(this.textBox6);
@@ -584,6 +586,16 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 22);
             this.textBox8.TabIndex = 22;
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Location = new System.Drawing.Point(94, 216);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(85, 37);
+            this.btnConfirmar.TabIndex = 8;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // frmAplicacao
             // 
@@ -659,6 +671,7 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnConfirmar;
     }
 }
 
